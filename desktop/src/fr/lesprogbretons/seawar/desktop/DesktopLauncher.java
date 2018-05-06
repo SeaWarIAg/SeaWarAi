@@ -13,11 +13,11 @@ public class DesktopLauncher {
 		config.addIcon("icon/wheel-32.png", Files.FileType.Internal);
 		config.addIcon("icon/wheel-16.png", Files.FileType.Internal);
 		config.title = "SeaWars";
-		config.width = 800;
-		config.height = 480;
+		config.width = 640;
+		config.height = 384;
 		config.x = 500;
 		config.y = 0;
-		config.resizable = false;
+		config.resizable = true;
 		new LwjglApplication(new SeaWar(), config);
 	}
 }

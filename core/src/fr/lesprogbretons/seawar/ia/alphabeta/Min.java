@@ -1,7 +1,15 @@
 package fr.lesprogbretons.seawar.ia.alphabeta;
 
 
+import fr.lesprogbretons.seawar.ia.etat.Etat;
+
+import static java.lang.Math.min;
+
 public class Min extends Noeud {
+
+    public Min(Etat etat){
+        super(etat);
+    }
 
     @Override
     public int utilite() {
@@ -15,10 +23,10 @@ public class Min extends Noeud {
             return utilite();
         } else {
             for (Noeud noeud : fils) {
-                alpha = min(beta, noeud.alphabeta(apha, beta));
+                alpha = min(beta, noeud.alphabeta(alpha, beta));
                 if (beta < alpha) break;
             }
-            return a;
+            return beta;//TODO:  vérifier !!!
         }
     }
 }

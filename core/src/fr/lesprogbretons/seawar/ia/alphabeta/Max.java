@@ -1,6 +1,10 @@
 package fr.lesprogbretons.seawar.ia.alphabeta;
 
 
+import fr.lesprogbretons.seawar.ia.etat.Etat;
+
+import static java.lang.StrictMath.max;
+
 public class Max extends Noeud {
 
     public Max(Etat etat){
@@ -19,10 +23,10 @@ public class Max extends Noeud {
             return utilite();
         } else {
             for (Noeud noeud : fils) {
-                alpha = max(alpha, noeud.alphabeta(apha, beta));
+                alpha = max(alpha, noeud.alphabeta(alpha, beta));
                 if (beta < alpha) break;
             }
-            return a;
+            return alpha;
         }
     }
 }
