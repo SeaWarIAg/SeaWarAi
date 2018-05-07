@@ -29,7 +29,7 @@ public class EditeurMapManager implements MapManager {
 
     @Override
     public UiType getMyUiType() {
-        return UiType.EDITOR;
+        return null;//TODO modifie pour que ca marche, peut etre a corriger UiType.EDITOR;
     }
 
     @Override
