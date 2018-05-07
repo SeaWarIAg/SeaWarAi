@@ -8,6 +8,7 @@ import com.badlogic.gdx.utils.Logger;
 import fr.lesprogbretons.seawar.assets.Assets;
 import fr.lesprogbretons.seawar.controller.Controller;
 import fr.lesprogbretons.seawar.model.Partie;
+import fr.lesprogbretons.seawar.model.Editeur;
 import fr.lesprogbretons.seawar.screen.SeaWarLoadingScreen;
 
 /**
@@ -54,6 +55,12 @@ public class SeaWar implements ApplicationListener {
 	 * La {@link Partie} qui contient toutes les données du jeu
 	 */
 	public static Partie partie;
+
+	//TODO Temporaire, mais le jeu ne fonctionne pas sans
+	/**
+	 * La {@link Editeur} qui contient toutes les données du jeu
+	 */
+	public static Editeur editeur;
 
 	/**
 	 * Le {@link Controller} qui permet de mettre a jour les données de la partie avec les actions du joueur

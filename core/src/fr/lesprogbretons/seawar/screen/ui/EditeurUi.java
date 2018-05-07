@@ -8,6 +8,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import fr.lesprogbretons.seawar.assets.Assets;
+import fr.lesprogbretons.seawar.controller.ControllerEditeur;
+import fr.lesprogbretons.seawar.model.Editeur;
 import fr.lesprogbretons.seawar.model.Orientation;
 import fr.lesprogbretons.seawar.screen.SeaWarMenuScreen;
 
@@ -24,6 +26,7 @@ public class EditeurUi extends Ui {
     private Table choixOrientationf1;
     private Table choixOrientationf2;
 
+    private ControllerEditeur editeurController= new ControllerEditeur();//TODO ajouté pour eviter bugs, peut etre a enlever
 
     public EditeurUi() {
         super();
