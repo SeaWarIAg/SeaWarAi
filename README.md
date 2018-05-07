@@ -1,6 +1,6 @@
-# SeaWar [![Build Status](https://travis-ci.org/ProjetSeaWar/SeaWar.svg?branch=master)](https://travis-ci.org/ProjetSeaWar/SeaWar)
+# SeaWar
 
-SeaWarAi  is AI project.
+SeaWarAi is AI project.
 
 ## Getting Started
 The flowing project is available [here](https://github.com/AghilasSini/SeaWarAi.git).
@@ -11,7 +11,7 @@ git clone https://github.com/AghilasSini/SeaWarAi.git
 ### Prerequisites
 
 *	Java 8 (Oracle or JDK)
-*	Eclipse/ IntelliJ (Up to you)
+*	Eclipse / IntelliJ (Up to you)
 
 ### Installing
 
@@ -19,6 +19,10 @@ After cloning the repostiry on your machine:
 ```
 ./gradlew clean
 ```
+
+Generate the project files for your IDE by using the following command line (inside the project):
+* Eclipse: `./gradlew eclipse`
+* IntelliJ: `./gradlew idea`
 
 You can compile and build the project by using the following command line (inside the project): 
 
@@ -31,9 +35,6 @@ To run the game:
 ```
 ./gradlew run
 ```
-
-
-End with an example of getting some data out of the system or using it for a little demo
 
 ## Running the tests
 
@@ -72,11 +73,12 @@ We use [Git](https://git-scm.com/) for versioning. For the versions available, s
 
 * **Les Programmeurs Bretons** - *Initial work* - [ProjetSeaWar](https://github.com/ProjetSeaWar/SeaWar.git)
 
-See also the list of [contributors](https://github.com/AghilasSini/SeaWarAi/contributors) who participated in this project.
+
+See also the list of [contributors](https://github.com/AghilasSini/SeaWarAi/CONTRIBUTING.md) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/AghilasSini/SeaWarAi/LICENSE.md) file for details
 
 ## Acknowledgments
 
