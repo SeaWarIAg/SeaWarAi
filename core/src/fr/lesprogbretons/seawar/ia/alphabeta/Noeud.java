@@ -1,6 +1,7 @@
 package fr.lesprogbretons.seawar.ia.alphabeta;
 
 import fr.lesprogbretons.seawar.ia.etat.Etat;
+import fr.lesprogbretons.seawar.model.actions.Action;
 
 import java.util.HashSet;
 
@@ -8,6 +9,7 @@ public abstract class Noeud {
 
     protected Etat etat;
     protected HashSet<Noeud> fils;
+    protected Action action;
 
 
     /**
@@ -18,11 +20,12 @@ public abstract class Noeud {
         this.etat = etat;
     }
 
-    private void genererFils() {
-        //TODO: creer les fils du noeud en cours en fonction de l'état
-
-    }
-
+    public abstract void genererFils();
     public abstract int utilite();
     public abstract int alphabeta(int alpha, int beta);
+    public abstract HashSet<Action> getActionsPossible();
+
+    public Etat getEtat() {
+        return etat;
+    }
 }
