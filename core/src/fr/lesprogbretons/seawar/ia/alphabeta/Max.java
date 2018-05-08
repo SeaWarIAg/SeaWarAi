@@ -3,8 +3,12 @@ package fr.lesprogbretons.seawar.ia.alphabeta;
 
 import fr.lesprogbretons.seawar.ia.etat.Etat;
 import fr.lesprogbretons.seawar.model.actions.Action;
+import fr.lesprogbretons.seawar.model.actions.MoveBoat;
 import fr.lesprogbretons.seawar.model.actions.PassTurn;
+import fr.lesprogbretons.seawar.model.boat.Boat;
+import fr.lesprogbretons.seawar.model.cases.Case;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 import static java.lang.StrictMath.max;
@@ -59,5 +63,16 @@ public class Max extends Noeud {
         return null;
     }
 
+    public HashSet<Action> getDeplacement(Boat boat) {
+        HashSet<Action> actions = new HashSet<Action>();
+        ArrayList<Case> tab = etat.getMove(boat);
+        if(tab != null) {
+            for (Case cell: tab) {
+                MoveBoat action = new MoveBoat(boat, cell);
+                actions.add(action);
+            }
+        }
+        return actions;
+    }
 
 }
