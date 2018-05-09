@@ -3,6 +3,9 @@ package fr.lesprogbretons.seawar.ia.etat;
 import fr.lesprogbretons.seawar.model.Orientation;
 import fr.lesprogbretons.seawar.model.Partie;
 import fr.lesprogbretons.seawar.model.actions.Action;
+import fr.lesprogbretons.seawar.model.actions.Attack;
+import fr.lesprogbretons.seawar.model.actions.MoveBoat;
+import fr.lesprogbretons.seawar.model.actions.PassTurn;
 import fr.lesprogbretons.seawar.model.boat.Boat;
 import fr.lesprogbretons.seawar.model.cases.Case;
 import fr.lesprogbretons.seawar.model.cases.CaseEau;
@@ -14,20 +17,33 @@ import java.util.HashSet;
 
 public class Etat {
 
-    private Partie partie; // besoin de la partie pour récuperrer la grille
-    private Grille map; // TODO: pull request pour changer les visibilites des getters => done !
+    private Grille map;
 
-    public Etat(HashSet<Boat> navires, HashSet<CaseEau> phares) { //info des bateaux et des phares
-        //TODO:
+    public Etat(Partie p) {
+        map = p.getMap();
+    }
+
+    public Etat (Grille g) {
+        map = g;
     }
 
     public Etat clone() {
-        //TODO: cloner la grille ? (qui clone elle meme les bateaux,...)
-        return null;
+        Etat clone = new Etat(map);
+        return clone;
     }
 
     public void simulateAction(Action action) {
-        //TODO: changer l'état suivant l'action
+        if(action instanceof MoveBoat) {
+            MoveBoat moveBoat = (MoveBoat) action;
+            moveBoat.getBoat().moveBoat(moveBoat.getTarget());
+        }
+        if(action instanceof Attack) {
+            Attack attack = (Attack) action;
+            attack.getBoat().shoot(map.bateauSurCase(attack.getTarget()));
+        }
+        if(action instanceof PassTurn) {
+            //TODO remettre a jour les instances des bateaux ?
+        }
     }
 
     //TODO: cloner un etat, trouver les actions à faire...

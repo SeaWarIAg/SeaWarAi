@@ -11,6 +11,8 @@ public abstract class Noeud {
     protected HashSet<Noeud> fils;
     protected Action action;
 
+    //protected Joueur joueur
+
 
     /**
      * Constructeur :
