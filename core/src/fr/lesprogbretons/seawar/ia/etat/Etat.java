@@ -17,19 +17,15 @@ import java.util.HashSet;
 
 public class Etat {
 
-    private Grille map;
+    private Partie partie;
 
     public Etat(Partie p) {
-        map = p.getMap();
-    }
+        partie = p;
 
-    public Etat (Grille g) {
-        map = g;
     }
 
     public Etat clone() {
-        Etat clone = new Etat(map);
-        return clone;
+        return new Etat(partie); //TODO: cloner la partie ???
     }
 
     public void simulateAction(Action action) {
@@ -39,10 +35,10 @@ public class Etat {
         }
         if(action instanceof Attack) {
             Attack attack = (Attack) action;
-            attack.getBoat().shoot(map.bateauSurCase(attack.getTarget()));
+            attack.getBoat().shoot(partie.getMap().bateauSurCase(attack.getTarget()));
         }
         if(action instanceof PassTurn) {
-            //TODO remettre a jour les instances des bateaux ?
+            partie.endTurn();
         }
     }
 
@@ -51,7 +47,7 @@ public class Etat {
 
     public ArrayList<Case> getMove(Boat boat) {
         if(boat.getMove() != 0) {
-            return map.getCasesDisponibles(boat.getPosition(), 1);
+            return partie.getMap().getCasesDisponibles(boat.getPosition(), 1);
         } else {
             return null;// pas de deplacement possible
         }
